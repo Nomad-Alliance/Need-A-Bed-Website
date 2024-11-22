@@ -4,7 +4,7 @@ Welcome to the NeedABed repository. This is a public service project aimed at co
 
 ## Tech Stack
 - [T3 Stack](https://create.t3.gg/)
-  - Next.js 15
+  - Next.js
   - TypeScript
   - Tailwind CSS
 - Shadcn/ui Components
