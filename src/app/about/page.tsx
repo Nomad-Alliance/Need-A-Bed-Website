@@ -4,6 +4,7 @@
 import { motion } from "framer-motion";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 import { Card, CardContent } from "~/components/ui/card";
+import Image from 'next/image'
 
 interface TeamMember {
   name: string;
@@ -209,7 +210,7 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
         <CardContent className="p-6">
           {member.school && (
             <div className="w-32 mx-auto mb-6">
-              <img
+              <Image
                 src={member.school.logo}
                 alt={`${member.school.name} logo`}
                 className="w-full h-auto object-contain"
@@ -218,7 +219,7 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
           )}
           {member.image && (
             <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
-              <img
+              <Image
                 src={member.image}
                 alt={member.name}
                 className="w-full h-full object-cover"

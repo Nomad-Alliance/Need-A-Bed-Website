@@ -16,7 +16,7 @@ export async function searchShelters(params: SearchParams): Promise<Shelter[]> {
       shelter.coordinates.lat,
       shelter.coordinates.lng
     );
-    return distance <= (params.radius || 25);
+    return distance <= (params.radius ?? 25);
   });
 }
 

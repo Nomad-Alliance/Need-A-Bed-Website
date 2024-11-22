@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { FC } from 'react';
+import type { FC } from 'react';
 import { Separator } from "~/components/ui/separator";
 import Image from "next/image";
 

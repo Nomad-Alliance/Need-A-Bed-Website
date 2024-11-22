@@ -11,7 +11,7 @@ const ThemeToggle = () => {
     // Check system preference initially
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     const savedTheme = localStorage.getItem('theme');
-    const initialTheme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+    const initialTheme = savedTheme ?? (systemPrefersDark ? 'dark' : 'light');
 
     setIsDark(initialTheme === 'dark');
     document.documentElement.classList.toggle('dark', initialTheme === 'dark');
