@@ -2,9 +2,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
+import Image from "next/image";
+import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { Card, CardContent } from "~/components/ui/card";
-import Image from 'next/image'
 
 interface TeamMember {
   name: string;
@@ -15,7 +15,7 @@ interface TeamMember {
   school?: {
     name: string;
     logo: string;
-  }
+  };
   socials?: {
     github?: string;
     linkedin?: string;
@@ -30,11 +30,11 @@ const originalContributors: TeamMember[] = [
     bio: "Weber State University student who contributed to the initial development.",
     school: {
       name: "Weber State University",
-      logo: "https://cdn.discordapp.com/attachments/1291613499658866719/1305202476923883550/wsu_athletics_primary_full_color_rgb_1500px_w_300ppi.png?ex=67322c07&is=6730da87&hm=0bdda088a17c9fcd958daf8daae9f988337a7eae4c9b877c660543cd43029c2b"
+      logo: "/Weber-Logo.png",
     },
     socials: {
-      github: "https://github.com/AmandaHansen5"
-    }
+      github: "https://github.com/AmandaHansen5",
+    },
   },
   {
     name: "Matt Juarez",
@@ -42,11 +42,11 @@ const originalContributors: TeamMember[] = [
     bio: "Weber State University student who contributed to the initial development.",
     school: {
       name: "Weber State University",
-      logo: "https://cdn.discordapp.com/attachments/1291613499658866719/1305202476923883550/wsu_athletics_primary_full_color_rgb_1500px_w_300ppi.png?ex=67322c07&is=6730da87&hm=0bdda088a17c9fcd958daf8daae9f988337a7eae4c9b877c660543cd43029c2b"
+      logo: "/Weber-Logo.png",
     },
     socials: {
-      github: "https://github.com/matthewjuarez1"
-    }
+      github: "https://github.com/matthewjuarez1",
+    },
   },
   {
     name: "Vipenjit Singh",
@@ -54,11 +54,11 @@ const originalContributors: TeamMember[] = [
     bio: "Weber State University student who contributed to the initial development.",
     school: {
       name: "Weber State University",
-      logo: "https://cdn.discordapp.com/attachments/1291613499658866719/1305202476923883550/wsu_athletics_primary_full_color_rgb_1500px_w_300ppi.png?ex=67322c07&is=6730da87&hm=0bdda088a17c9fcd958daf8daae9f988337a7eae4c9b877c660543cd43029c2b"
+      logo: "/Weber-Logo.png",
     },
     socials: {
-      github: "https://github.com/VSingh-0"
-    }
+      github: "https://github.com/VSingh-0",
+    },
   },
   {
     name: "Cayden Schroader",
@@ -66,11 +66,11 @@ const originalContributors: TeamMember[] = [
     bio: "Weber State University student who contributed to the initial development.",
     school: {
       name: "Weber State University",
-      logo: "https://cdn.discordapp.com/attachments/1291613499658866719/1305202476923883550/wsu_athletics_primary_full_color_rgb_1500px_w_300ppi.png?ex=67322c07&is=6730da87&hm=0bdda088a17c9fcd958daf8daae9f988337a7eae4c9b877c660543cd43029c2b"
+      logo: "/Weber-Logo.png",
     },
     socials: {
-      github: "https://github.com/CS-EDU921"
-    }
+      github: "https://github.com/CS-EDU921",
+    },
   },
   {
     name: "Braden Shipley",
@@ -78,11 +78,11 @@ const originalContributors: TeamMember[] = [
     bio: "Weber State University student who contributed to the initial development.",
     school: {
       name: "Weber State University",
-      logo: "https://cdn.discordapp.com/attachments/1291613499658866719/1305202476923883550/wsu_athletics_primary_full_color_rgb_1500px_w_300ppi.png?ex=67322c07&is=6730da87&hm=0bdda088a17c9fcd958daf8daae9f988337a7eae4c9b877c660543cd43029c2b"
+      logo: "/Weber-Logo.png",
     },
     socials: {
-      github: "https://github.com/Bshiple"
-    }
+      github: "https://github.com/Bshiple",
+    },
   },
   {
     name: "Jaden Roskelley",
@@ -90,12 +90,12 @@ const originalContributors: TeamMember[] = [
     bio: "Weber State University student who contributed to the initial development.",
     school: {
       name: "Weber State University",
-      logo: "https://cdn.discordapp.com/attachments/1291613499658866719/1305202476923883550/wsu_athletics_primary_full_color_rgb_1500px_w_300ppi.png?ex=67322c07&is=6730da87&hm=0bdda088a17c9fcd958daf8daae9f988337a7eae4c9b877c660543cd43029c2b"
+      logo: "/Weber-Logo.png",
     },
     socials: {
-      github: "https://github.com/croskelley1"
-    }
-  }
+      github: "https://github.com/croskelley1",
+    },
+  },
 ];
 
 const currentTeam: TeamMember[] = [
@@ -107,8 +107,8 @@ const currentTeam: TeamMember[] = [
     email: "harrison@nomadalliance.org",
     socials: {
       github: "https://github.com/hsmith-dev",
-      linkedin: "https://www.linkedin.com/in/hsmith-dev/"
-    }
+      linkedin: "https://www.linkedin.com/in/hsmith-dev/",
+    },
   },
   {
     name: "Kseniya",
@@ -116,8 +116,7 @@ const currentTeam: TeamMember[] = [
     bio: "Leading Nomad Alliance's mission to support and empower individuals experiencing homelessness across Utah.",
     image: "/images/kseniya-headshot.jpg",
     email: "kseniya@nomadalliance.org",
-    socials: {
-    }
+    socials: {},
   },
   {
     name: "Michael",
@@ -126,47 +125,48 @@ const currentTeam: TeamMember[] = [
     image: "/images/michael-headshot.jpeg",
     socials: {
       github: "https://github.com/swayz8148",
-      linkedin: "https://linkedin.com/in/michealdownard"
-    }
-  }
+      linkedin: "https://linkedin.com/in/michealdownard",
+    },
+  },
 ];
 
 export default function AboutPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-b from-background to-background/95">
-        <div className="container mx-auto px-4 max-w-7xl">
+      <section className="relative bg-gradient-to-b from-background to-background/95 py-20">
+        <div className="container mx-auto max-w-7xl px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-center max-w-3xl mx-auto"
+            className="mx-auto max-w-3xl text-center"
           >
-            <h1 className="text-4xl font-bold mb-6">
+            <h1 className="mb-6 text-4xl font-bold">
               About <span className="text-brand-gold">Need a Bed</span>
             </h1>
             <p className="text-lg text-muted-foreground">
-              Connecting individuals with shelter and support services across Utah.
+              Connecting individuals with shelter and support services across
+              Utah.
             </p>
           </motion.div>
         </div>
       </section>
 
       {/* Mission Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-7xl">
+      <section className="bg-muted/30 py-16">
+        <div className="container mx-auto max-w-7xl px-4">
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className="text-center max-w-3xl mx-auto"
+            className="mx-auto max-w-3xl text-center"
           >
-            <h2 className="text-3xl font-bold mb-6">Our Mission</h2>
+            <h2 className="mb-6 text-3xl font-bold">Our Mission</h2>
             <p className="text-lg text-muted-foreground">
-              Need a Bed was created to bridge the gap between those seeking shelter
-              and available resources in Utah. We believe everyone deserves access
-              to safe shelter and support services.
+              Need a Bed was created to bridge the gap between those seeking
+              shelter and available resources in Utah. We believe everyone
+              deserves access to safe shelter and support services.
             </p>
           </motion.div>
         </div>
@@ -174,9 +174,11 @@ export default function AboutPage() {
 
       {/* Original Contributors Section */}
       <section className="py-16">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Original Contributors</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="container mx-auto max-w-7xl px-4">
+          <h2 className="mb-12 text-center text-3xl font-bold">
+            Original Contributors
+          </h2>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {originalContributors.map((member, index) => (
               <TeamMemberCard key={index} member={member} />
             ))}
@@ -185,14 +187,53 @@ export default function AboutPage() {
       </section>
 
       {/* Current Team Section */}
-      <section className="py-16 bg-muted/30">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <h2 className="text-3xl font-bold text-center mb-12">Current Team</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section className="bg-muted/30 py-16">
+        <div className="container mx-auto max-w-7xl px-4">
+          <h2 className="mb-12 text-center text-3xl font-bold">Current Team</h2>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
             {currentTeam.map((member, index) => (
-              <TeamMemberCard key={index} member={member} />
+              <div key={index} className="h-96">
+                <TeamMemberCard member={member} />
+              </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Contribution Section */}
+      <section className="py-16">
+        <div className="container mx-auto max-w-7xl px-4">
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            className="mx-auto max-w-3xl text-center"
+          >
+            <h2 className="mb-6 text-3xl font-bold">
+              Contribute to Our Project
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              We are working to expand this project to make it more dynamic and
+              functional in other locations. If you would like to contribute to
+              improving this project, please check out our GitHub at{" "}
+              <a
+                href="https://github.com/Nomad-Alliance/Need-a-Bed"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-brand-gold transition-colors hover:text-brand-gold/75"
+              >
+                https://github.com/Nomad-Alliance/Need-a-Bed
+              </a>{" "}
+              or message us at{" "}
+              <a
+                href="mailto:info@nomadalliance.org"
+                className="text-brand-gold transition-colors hover:text-brand-gold/75"
+              >
+                info@nomadalliance.org
+              </a>
+              .
+            </p>
+          </motion.div>
         </div>
       </section>
     </main>
@@ -205,37 +246,44 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3 }}
+      className="h-full"
     >
-      <Card className="overflow-hidden">
-        <CardContent className="p-6">
+      <Card className="flex h-full flex-col justify-between overflow-hidden">
+        <CardContent className="flex flex-col items-center p-6">
           {member.school && (
-            <div className="w-32 mx-auto mb-6">
+            <div className="mx-auto mb-6 w-32">
               <Image
                 src={member.school.logo}
                 alt={`${member.school.name} logo`}
-                className="w-full h-auto object-contain"
+                width="100"
+                height="100"
+                className="h-auto w-full object-contain"
               />
             </div>
           )}
           {member.image && (
-            <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden">
+            <div className="mx-auto mb-4 h-24 w-24 overflow-hidden rounded-full">
               <Image
                 src={member.image}
                 alt={member.name}
-                className="w-full h-full object-cover"
+                width="100"
+                height="100"
+                className="h-full w-full object-cover"
               />
             </div>
           )}
-          <h3 className="text-xl font-semibold text-center mb-2">{member.name}</h3>
-          <p className="text-brand-gold text-center mb-4">{member.role}</p>
-          <p className="text-muted-foreground text-center mb-6">{member.bio}</p>
+          <h3 className="mb-2 text-center text-xl font-semibold">
+            {member.name}
+          </h3>
+          <p className="mb-4 text-center text-brand-gold">{member.role}</p>
+          <p className="mb-6 text-center text-muted-foreground">{member.bio}</p>
 
           {member.email && (
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <FaEnvelope className="w-4 h-4 text-brand-gold" />
+            <div className="mb-4 flex items-center justify-center gap-2">
+              <FaEnvelope className="h-4 w-4 text-brand-gold" />
               <a
                 href={`mailto:${member.email}`}
-                className="text-muted-foreground hover:text-brand-gold transition-colors"
+                className="text-muted-foreground transition-colors hover:text-brand-gold"
               >
                 {member.email}
               </a>
@@ -249,9 +297,9 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
                   href={member.socials.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-brand-gold transition-colors"
+                  className="text-muted-foreground transition-colors hover:text-brand-gold"
                 >
-                  <FaGithub className="w-6 h-6" />
+                  <FaGithub className="h-6 w-6" />
                 </a>
               )}
               {member.socials.linkedin && (
@@ -259,9 +307,9 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
                   href={member.socials.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-brand-gold transition-colors"
+                  className="text-muted-foreground transition-colors hover:text-brand-gold"
                 >
-                  <FaLinkedin className="w-6 h-6" />
+                  <FaLinkedin className="h-6 w-6" />
                 </a>
               )}
               {member.socials.twitter && (
@@ -269,9 +317,9 @@ function TeamMemberCard({ member }: { member: TeamMember }) {
                   href={member.socials.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-brand-gold transition-colors"
+                  className="text-muted-foreground transition-colors hover:text-brand-gold"
                 >
-                  <FaTwitter className="w-6 h-6" />
+                  <FaTwitter className="h-6 w-6" />
                 </a>
               )}
             </div>

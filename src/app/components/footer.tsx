@@ -18,17 +18,14 @@ interface LinkSectionProps {
 const footerLinks = {
   resources: [
     { name: "Find Shelter", href: "/find-shelter" },
-    { name: "Emergency Resources", href: "/resources" },
-    { name: "Get Help", href: "/help" },
   ],
   about: [
     { name: "Our Mission", href: "/about" },
-    { name: "Contact", href: "/contact" },
-    { name: "Support Us", href: "/support" },
   ],
   legal: [
-    { name: "Privacy Policy", href: "/privacy" },
-    { name: "Terms of Use", href: "/terms" },
+    // { name: "Privacy Policy", href: "/privacy" },
+    // { name: "Terms of Use", href: "/terms" },
+    // add in at a later date.
   ],
 };
 
@@ -55,7 +52,7 @@ const Footer: FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 justify-items-center text-center md:text-left mb-12">
           <LinkSection title="Resources" links={footerLinks.resources} />
           <LinkSection title="About" links={footerLinks.about} />
-          <LinkSection title="Legal" links={footerLinks.legal} />
+          {/* <LinkSection title="Legal" links={footerLinks.legal} /> */}
         </div>
 
         <Separator className="my-8 opacity-30" />
